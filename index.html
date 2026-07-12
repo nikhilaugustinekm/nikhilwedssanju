@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Wedding Countdown ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#fdf6f0,#ffe8ec);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    color:#444;
+}
+
+.container{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    max-width:700px;
+    width:90%;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    color:#d63384;
+}
+
+h2{
+    font-size:1.3rem;
+    margin-bottom:35px;
+    font-weight:normal;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:#fff0f5;
+    padding:20px;
+    border-radius:15px;
+    width:120px;
+}
+
+.box span{
+    display:block;
+    font-size:3rem;
+    font-weight:bold;
+    color:#d63384;
+}
+
+.box p{
+    margin-top:10px;
+    font-size:1rem;
+}
+
+.footer{
+    margin-top:35px;
+    font-size:1.1rem;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💍 Our Wedding</h1>
+    <h2>15 November 2026</h2>
+
+    <div class="countdown">
+        <div class="box">
+            <span id="days">0</span>
+            <p>Days</p>
+        </div>
+
+        <div class="box">
+            <span id="hours">0</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="box">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="box">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        Counting down to our forever ❤️
+    </div>
+</div>
+
+<script>
+const weddingDate = new Date("November 15, 2026 00:00:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if(distance < 0){
+        document.querySelector(".container").innerHTML =
+        "<h1>🎉 Today is the Wedding Day! ❤️</h1>";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+
+</body>
+</html>
