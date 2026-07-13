@@ -699,3 +699,20 @@ font-size:44px;
         height:350px;
     }
 }
+.venue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.venue h2{
+    margin-bottom: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+}
+
+.venue .line{
+    margin-bottom: 35px;
+}
