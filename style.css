@@ -716,3 +716,31 @@ font-size:44px;
 .venue .line{
     margin-bottom: 35px;
 }
+
+
+.spotify-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #1DB954;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
+
+.spotify-float:hover {
+    transform: scale(1.1);
+}
+
+.spotify-float svg {
+    width: 34px;
+    height: 34px;
+}
+
